@@ -266,7 +266,7 @@ async def document_rag(q: RAGRequest):
     index = VectorStoreIndex.from_vector_store(vector_store)
 
     # Conditional Top K, Adjust Based on Need
-    top_k = 5 if q.retrieve_from == "document_index" else 10
+    top_k = 2 if q.retrieve_from == "document_index" else 5
 
     # Initialize Retriever
     retriever = index.as_retriever(similarity_top_k=top_k)
