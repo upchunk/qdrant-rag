@@ -799,19 +799,6 @@ wheels = [
 ]
 
 [[package]]
-name = "llama-index-embeddings-fastembed"
-version = "0.4.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "fastembed" },
-    { name = "llama-index-core" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/6e/c4/d3a9d0069ce0948e9a49bedaebc816e39198856a55696a7d68a371fc6e24/llama_index_embeddings_fastembed-0.4.0.tar.gz", hash = "sha256:0171c9c9ff973620b1273d3e8cdc39f7483fb49b574fecc8e25c9164f4284082", size = 4015, upload-time = "2025-07-30T20:55:31.027Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/d0/e2/800edfc831f323a19b86ac0d946f88ca8a63946dc6791e071c743b437fc8/llama_index_embeddings_fastembed-0.4.0-py3-none-any.whl", hash = "sha256:159e2cd7fd8c51e0284414be6b42bdd9a5c4cbff7b3ae682adb6bd8020ce1a4e", size = 3652, upload-time = "2025-07-30T20:55:30.269Z" },
-]
-
-[[package]]
 name = "llama-index-embeddings-openai"
 version = "0.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1614,7 +1601,6 @@ dependencies = [
     { name = "fastembed" },
     { name = "ftfy" },
     { name = "llama-index" },
-    { name = "llama-index-embeddings-fastembed" },
     { name = "llama-index-readers-file" },
     { name = "llama-index-vector-stores-qdrant" },
     { name = "pypdf" },
@@ -1628,7 +1614,6 @@ requires-dist = [
     { name = "fastembed", specifier = ">=0.7.1" },
     { name = "ftfy", specifier = ">=6.3.1" },
     { name = "llama-index", specifier = ">=0.13.0" },
-    { name = "llama-index-embeddings-fastembed", specifier = ">=0.4.0" },
     { name = "llama-index-readers-file", specifier = ">=0.5.0" },
     { name = "llama-index-vector-stores-qdrant", specifier = ">=0.7.1" },
     { name = "pypdf", specifier = ">=5.9.0" },

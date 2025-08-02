@@ -18,7 +18,8 @@ from llama_index.core.schema import Document, MediaResource, NodeWithScore
 from llama_index.core.text_splitter import SentenceSplitter
 from llama_index.core.tools import RetrieverTool
 from llama_index.core.workflow import Context
-from llama_index.embeddings.fastembed import FastEmbedEmbedding
+from llama_index.embeddings.openai import OpenAIEmbedding, OpenAIEmbeddingModelType
+from llama_index.llms.openai import OpenAI
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 from pydantic import BaseModel
 from pypdf import PdfReader
@@ -48,10 +49,12 @@ app.add_middleware(
 )
 
 # Initialize Global Embedding Model
-Settings.embed_model = FastEmbedEmbedding(model_name="BAAI/bge-small-en-v1.5")
+Settings.embed_model = OpenAIEmbedding(
+    model=OpenAIEmbeddingModelType.TEXT_EMBED_3_SMALL,
+)
 
 # Initialzie Global LLM
-Settings.llm
+Settings.llm = OpenAI(model="gpt-4.1-mini", temperature=0.1)
 
 # Initialize Global Tokenizer
 Settings.tokenizer = partial(get_encoding("o200k_base").encode, allowed_special="all")
